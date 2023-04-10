@@ -1,48 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Payment Form</title>
-	<style>
-		label {
-			display: block;
-			margin-bottom: 5px;
-		}
-		input[type="text"], input[type="number"], select {
-			width: 100%;
-			padding: 5px;
-			border: 1px solid #ccc;
-			border-radius: 3px;
-			margin-bottom: 10px;
-			box-sizing: border-box;
-			font-size: 16px;
-		}
-		input[type="submit"] {
-			background-color: #4CAF50;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-		input[type="submit"]:hover {
-			background-color: #45a049;
-		}
-	</style>
+	<title>Mohan Electricity Bill Payment Portal</title>
+
 </head>
 <body>
 	<h1>Payment Form</h1>
-	<form action="./thanku.html" method="submit">
-		<label for="card-number">Card Number</label>
-		<input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required>
+	<form action="thanku.html" method="submit">
+		<label for="card-number">Card Number</label><br>
+		<input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" required><br><br>
 
-		<label for="expiry-date">Expiry Date</label>
-		<input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+		<label for="expiry-date">Expiry Date</label><br>
+		<input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required><br><br>
 
-		<label for="cvc">CVC</label>
-		<input type="number" id="cvc" name="cvc" placeholder="123" required>
+		<label for="cvc">CVC</label><br>
+		<input type="text" id="cvc" name="cvc" placeholder="123" required><br><br>
 
-		<label for="amount">Amount</label>
-		<input type="number" id="rupee" name="rupee" placeholder="₹100" required>
+		<label for="amount">Amount</label><br>
+		<input type="text" id="rupee" name="rupee" placeholder="₹100" required><br><br>
 
 
 
