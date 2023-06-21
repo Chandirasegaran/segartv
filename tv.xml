@@ -6,7 +6,8 @@
     </channel>
     <channel>
         <name>vijaytv</name>
-        <url>https://cdn.tamilultra.net/STAR_VIJAY/index.m3u8?token=56bd1ca92f4aac3efa793259e1e23d411de0410d-209e89ad832d83bb1eee6c10a9f25cb6-1687288185-1687284585</url>
+<!--         <url>https://cdn.tamilultra.net/STAR_VIJAY/index.m3u8?token=56bd1ca92f4aac3efa793259e1e23d411de0410d-209e89ad832d83bb1eee6c10a9f25cb6-1687288185-1687284585</url> -->
+<url>https://cdn.tamilultra.net/STAR_VIJAY/tracks-v1a1/mono.m3u8?token=e28e04a02efff80d2f80da0ae81444705b990161-f40ace796bb3ac98a61d006d6809578c-1687376744-1687373144</url>
     </channel>
     <channel>
         <name>isaiaruvi</name>
