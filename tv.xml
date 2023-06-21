@@ -20,4 +20,8 @@
         <name>sunmusic</name>
         <url>https://jio.tamilultra.net/app/live/895/tamilultra/index.m3u8</url>
     </channel>
+    <channel>
+        <name>starsport</name>
+        <url>https://jio.tamilultra.net/app/live/895/tamilultra/index.m3u8</url>
+    </channel>
 </channels>
