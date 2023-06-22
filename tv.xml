@@ -22,7 +22,7 @@
     </channel>
     <channel>
         <name>starsport</name>
-        <url>https://jio.tamilultra.net/app/live/895/tamilultra/index.m3u8</url>
+        <url>https://cdn.tamilultra.net/SPTAMIL/tracks-v1a1/mono.m3u8?token=4925e8510a4d168267b7fc587f3d844994b7e25a-079880dc0cd344ad52b8d991858bc07f-1687448271-1687444671</url>
     </channel>
     <channel>
         <name>polimernews</name>
