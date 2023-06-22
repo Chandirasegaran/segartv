@@ -53,4 +53,8 @@
         <name>jayatv</name>
         <url>https://jio.tamilultra.net/app/live/419/tamilultra/index.m3u8</url>
     </channel>
+    <channel>
+        <name>zeetamil</name>
+        <url>https://jio.tamilultra.net/app/live/628/tamilultra/index.m3u8</url>
+    </channel>
 </channels>
