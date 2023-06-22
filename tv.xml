@@ -28,4 +28,8 @@
         <name>polimernews</name>
         <url>https://yuppmedtaorire.akamaized.net/v1/manifest/a0d007312bfd99c47f76b77ae26b1ccdaae76cb1/polimernews_nim_https/5810c8f1-2981-44df-9db8-a286dc1cce85/0.m3u8</url>
     </channel>
+     <channel>
+        <name>news18</name>
+        <url>https://jio.tamilultra.net/app/live/615/tamilultra/161fa1114c01b7beca7c3a2a73a31cddb0a67c6ed6c9464b5aa8af2e9ba18139aa2be1f98e7c0ee689c66af503076f1db72381f30ad1518d7e5191564ea8dcd2ef353a94b1c9cd60cbcfde66aec52f3ec3fcf6d4579a6a12b66b87dad8a04505d1ba6b8261bfa4f484305b1db21bd7f997e403207aafeced00f337de69857a77f4da5f00b9941f52965cf612a469be84f10376bde64c7d4a835ae5a03e487603c8e43af100e4eb46ac3ff940d4de846e_playlist.m3u8</url>
+    </channel>
 </channels>
