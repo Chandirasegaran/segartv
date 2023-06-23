@@ -62,6 +62,20 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword '250302'
+            storeFile file('key.jks')
+            storePassword '250302'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+
 }
 
 flutter {
