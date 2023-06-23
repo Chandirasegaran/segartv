@@ -3,8 +3,11 @@ import 'package:video_player/video_player.dart';
 import 'package:http/http.dart' as http;
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:wakelock/wakelock.dart';
 
 void main() {
+  Wakelock.enable();
   runApp(SegarTvApp());
 }
 
@@ -34,7 +37,7 @@ class SegarTvHomePage extends StatefulWidget {
 class _SegarTvHomePageState extends State<SegarTvHomePage> {
   FocusNode _focusNode = FocusNode();
   int _selectedItemIndex = 0;
-
+  CarouselController _carouselController = CarouselController();
   @override
   void initState() {
     super.initState();
@@ -45,6 +48,7 @@ class _SegarTvHomePageState extends State<SegarTvHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Icon(Icons.tv),
         title: Text('Segar TV'),
       ),
       body: RawKeyboardListener(
@@ -56,31 +60,48 @@ class _SegarTvHomePageState extends State<SegarTvHomePage> {
                 _selectedItemIndex = (_selectedItemIndex - 1)
                     .clamp(0, 12); // 5 is the total number of items
               });
+              _carouselController.previousPage();
             } else if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
               setState(() {
                 _selectedItemIndex = (_selectedItemIndex + 1)
                     .clamp(0, 13); // 5 is the total number of items
               });
-            } else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-              setState(() {
-                _selectedItemIndex =
-                    (_selectedItemIndex - 4).clamp(0, 12); // 4 items per row
-              });
-            } else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-              setState(() {
-                _selectedItemIndex =
-                    (_selectedItemIndex + 4).clamp(0, 12); // 4 items per row
-              });
-            } else if (event.logicalKey == LogicalKeyboardKey.select ||
+              _carouselController.nextPage();
+            }
+            // else if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
+            //   setState(() {
+            //     _selectedItemIndex =
+            //         (_selectedItemIndex - 4).clamp(0, 12); // 4 items per row
+            //   });
+            // }
+            // else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
+            //   setState(() {
+            //     _selectedItemIndex =
+            //         (_selectedItemIndex + 4).clamp(0, 12); // 4 items per row
+            //   });
+            // }
+            else if (event.logicalKey == LogicalKeyboardKey.select ||
                 event.logicalKey == LogicalKeyboardKey.enter) {
               _handleSelectKey(context);
             }
           }
         },
         child: SafeArea(
-          child: GridView.count(
-            crossAxisCount: 4,
-            children: [
+          child: CarouselSlider(
+            carouselController: _carouselController,
+            options: CarouselOptions(
+              height: double.infinity,
+              initialPage: _selectedItemIndex,
+              enableInfiniteScroll: false,
+              viewportFraction: 0.25,
+              enlargeCenterPage: true,
+              onPageChanged: (index, _) {
+                setState(() {
+                  _selectedItemIndex = index;
+                });
+              },
+            ),
+            items: [
               GridItem(
                 name: 'Sun TV',
                 iconPath: 'ico/suntv.png',
@@ -235,7 +256,7 @@ class _SegarTvHomePageState extends State<SegarTvHomePage> {
         navigateToPlayerPage(context, 'news18');
         break;
       case 8:
-        navigateToPlayerPage(context, 'news18');
+        navigateToPlayerPage(context, 'adthiya');
         break;
       case 9:
         navigateToPlayerPage(context, 'jayatv');
@@ -253,6 +274,7 @@ class _SegarTvHomePageState extends State<SegarTvHomePage> {
         navigateToPlayerPage(context, 'chutti');
         break;
     }
+    _carouselController.animateToPage(_selectedItemIndex);
   }
 }
 
@@ -277,7 +299,7 @@ class GridItem extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           border: Border.all(
-            color: isSelected ? Colors.blue : Colors.transparent,
+            color: isSelected ? Colors.transparent : Colors.transparent,
             width: 2.0,
           ),
         ),
@@ -312,10 +334,14 @@ class _MediaPlayerPageState extends State<MediaPlayerPage> {
         _controller.play();
         _controller.setLooping(true);
       });
+    Wakelock.enable();
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    double aspectRatio = screenWidth / screenHeight;
     return Scaffold(
       body: RawKeyboardListener(
         focusNode: FocusNode(),
@@ -329,7 +355,7 @@ class _MediaPlayerPageState extends State<MediaPlayerPage> {
         child: Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
-                  aspectRatio: _controller.value.aspectRatio,
+                  aspectRatio: aspectRatio,
                   child: VideoPlayer(_controller),
                 )
               : CircularProgressIndicator(),
