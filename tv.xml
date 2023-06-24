@@ -35,7 +35,7 @@
     <channel>
         <name>sonytentamil</name>
         <!-- https://lin-gd-001-cf.slivcdn.com/out/v1/686ed751131a40d89bc86bfd7c1ae321/master.m3u8?hdnea=st=1687445954~exp=1687446254~acl=*~id=14e154d1-9196-4825-9ef2-658935a340e1~hmac=13ca808601b41d102737e94c819de3a3f6fc52e25af15e23b93b7628bc95ced6&originpath=/linear/hls/pb/event/tNzcW2ZhTVaViggo5ocI-A/stream/8e49c181-7fb8-4fc3-b551-fd3baa05e400:SIN2/master.m3u8 -->
-        <url>https://jio.tamilultra.net/app/live/1772/tamilultra/80fda1aa9987f31194760a88ca59518ce11142615ee367de57cc1ba257e474a6fa4a74683aa93d72845ddfd878c660eea4ea9c68d94f0ab6672640bb313d37967c694e7212ed487a14151af8c315602506a3facd6ce58bbef2e5d8869bda83f31361d965dcd1a96b121411b09297a298_playlist.m3u8</url>
+        <url>https://jio.tamilultra.net/app/live/1772/tamilultra/index.m3u8</url>
     </channel>
     <channel>
         <name>adthiya</name>
